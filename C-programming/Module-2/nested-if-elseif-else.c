@@ -7,7 +7,7 @@ int main()
     int is_ship_available = "true";
     printf("Enter your holyday: ");
     scanf("%d", &days);
-    if ((days <= 2)&&(days>0))
+    if ((days <= 2) && (days > 0))
     {
         if (is_boot_available == "true")
         {
@@ -29,11 +29,11 @@ int main()
             printf("Cox Bazar");
         }
     }
-    else if (days>4)
+    else if (days > 4)
     {
         printf("Chool mama long tour dey..!!!!! YAY!!!");
     }
-    
+
     else
     {
         printf("tor boss age chuti dik pore tour er programme koris");
