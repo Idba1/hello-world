@@ -36,7 +36,7 @@ int main()
         if (number2 != 0)
         {
             result = number1 % number2;
-            printf("modulus is = %d\n", result);
+            printf("result is = %d %% %d = %d\n",number1,number2,result);
         }
         else
         {
