@@ -10,9 +10,10 @@ int main()
         printf("hello from do %d\n", i);
         i++;
     } while (i <= n);
-    // {
-    //     printf("Hello from while %d\n", i);
-    // };
+    {
+        printf("Hello from while %d\n", i);
+        printf("Hello from while %d\n", i);
+    };
 
     return 0;
 }
