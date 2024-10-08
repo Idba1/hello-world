@@ -1,14 +1,17 @@
 #include <stdio.h>
 int main()
 {
-    int n;
-    scanf("%d", &n);
-    for (int i = 1; i <= n; i++)
+    int N, firstNum, secondNum;
+    scanf("%d", &N);
+    firstNum = N / 10;
+    secondNum = N % 10;
+    if ((firstNum != 0 || secondNum != 0) && (firstNum % secondNum == 0 || secondNum % firstNum == 0))
     {
-        if (i % 2 == 0)
-        {
-            printf("%d\n", i);
-        }
+        printf("YES\n");
+    }
+    else
+    {
+        printf("NO\n");
     }
 
     return 0;
