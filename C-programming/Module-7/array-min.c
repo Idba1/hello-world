@@ -22,3 +22,12 @@ int main()
     printf("%d", min);
     return 0;
 }
+
+// max=arr[0]
+// min=arr[0]
+// if (arr[i] < min)
+// {
+//     min = arr[0];
+// }
+// int arr[5] = {'a', 'c', 'e', 'd', 'f'};
+// printf("%d", arr[1]);
