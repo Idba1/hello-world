@@ -3,6 +3,7 @@ int main()
 // arr[10000000]
 {
     int n, sum = 0;
+    double avg;
     scanf("%d", &n);
     int arr[n];
 
@@ -23,5 +24,7 @@ int main()
     }
     printf("\n");
     printf("%d", sum);
+    avg = (double) sum / n; //type casting
+    printf("\n%0.2lf", avg);
     return 0;
 }
