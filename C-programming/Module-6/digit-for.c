@@ -7,11 +7,16 @@ int main()
     {
         int n;
         scanf("%d", &n);
-        for (n; n > 0; n = n / 10)
+
+        if (n == 0)
+        {
+            printf("0");
+        }
+
+        for (; n > 0; n = n / 10)
         {
             int digit = n % 10;
             printf("%d ", digit);
-            
         }
         printf("\n");
     }
