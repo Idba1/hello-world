@@ -22,9 +22,9 @@ int main()
     for (int i = 0; i < N; i++)
     {
         // eqaul_salami = max_salami - salami[i];
-        salami[i];
-        
+        // salami[i];
+        salami[i] = max_salami - salami[i];
+        printf("%d ", salami[i]);
     }
-    printf("%d", eqaul_salami);
     return 0;
 }
