@@ -13,17 +13,29 @@ int main()
         scanf("%d", &a[j]);
         printf("%d ", a[j]);
     }
+
     printf("\n");
     int b[n];
-    for (int j = n-1, i = 0; j >= 0, i < n; j--, i++)
+    for (int j = n - 1, i = 0; j >= 0, i < n; j--, i++)
     {
         b[j] = a[i];
     }
+
     printf("\n");
     for (int j = 0; j < n; j++)
     {
-        printf("%d ", b[j]);
+        a[j] = b[j];
     }
-
+    // printf("\n");
+    // for (int j = 0; j < n; j++)
+    // {
+    //     printf("%d ", b[j]);
+    // }
+    
+    printf("\n");
+    for (int i = 0; i < n; i++)
+    {
+        printf("%d ", a[i]);
+    }
     return 0;
 }
