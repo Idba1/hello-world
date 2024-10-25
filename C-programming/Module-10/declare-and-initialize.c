@@ -9,8 +9,9 @@ int main()
     char b[] = "world";
     char c[] = "hello world";
     strcat(b, a);
+    printf("%s\n",b);
     strcpy(c, b);
-    printf("%s",c);
+    printf("%s\n",c);
 
     return 0;
 }
