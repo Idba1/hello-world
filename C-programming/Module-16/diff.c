@@ -8,7 +8,8 @@ int main()
     int A, B;
     scanf("%d %d", &A, &B);
     int *addressA = &A, *addressB = &B;
-    int difference = ((*addressA - *addressB) * (-1)); //abs dile correct ase keno?
+    int difference = ((*addressA - *addressB) * (-1)); // abs dile correct ase keno?
+    // int difference = abs(*addressA - *addressB);
     printf("%d\n", difference);
     return 0;
 }
