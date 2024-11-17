@@ -9,7 +9,8 @@ int main()
 
     int e, f, g, h;
     cin >> e >> f >> g >> h;
-    cout << max(max(e, f), max(g, h)) << endl;
+    // cout << max(max(e, f), max(g, h)) << endl;
+    cout << max({e, f, g, h}) << endl;
 
     return 0;
 }
