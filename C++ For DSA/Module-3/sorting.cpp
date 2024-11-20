@@ -9,7 +9,8 @@ int main()
     {
         cin >> arr[i];
     }
-    sort(arr, arr + n);
+    // sort(arr, arr + n); //asending
+    sort(arr, arr + n, greater<int>()); // descending
     for (int i = 0; i < n; i++)
     {
         cout << arr[i] << " ";
