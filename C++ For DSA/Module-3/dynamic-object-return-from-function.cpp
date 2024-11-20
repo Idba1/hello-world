@@ -14,9 +14,8 @@ public:
 };
 Student *fun()
 {
-    Student rifa(1017, 4.37);
-    Student *p = &rifa;
-    return p;
+    Student *rifa = new Student(1017, 4.37);
+    return rifa;
 }
 
 int main()
