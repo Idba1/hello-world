@@ -9,9 +9,16 @@ int main()
 
     stringstream ss(s);
     string str;
-    ss >> str;
-    cout << str << endl;
-    ss >> str;
-    cout << str << endl;
+    int count = 0;
+    while (ss >> str)
+    {
+        cout << str << endl;
+        count++;
+    }
+    cout << count << endl;
+    // ss >> str;
+    // cout << str << endl;
+    // ss >> str;
+    // cout << str << endl;
     return 0;
 }
