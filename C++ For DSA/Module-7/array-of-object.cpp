@@ -12,11 +12,14 @@ int main()
 {
     int n;
     cin >> n;
+    
     Student arr[n];
 
     for (int i = 0; i < n; i++)
     {
-        cin >> arr[i].name >> arr[i].roll >> arr[i].marks;
+        cin.ignore();
+        getline(cin, arr[i].name);
+        cin >> arr[i].roll >> arr[i].marks;
     }
 
     for (int i = 0; i < n; i++)
