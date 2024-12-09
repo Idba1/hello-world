@@ -26,8 +26,15 @@ int main()
     // }
 
     // vector initialization type 5
-    int arr[4] = {1, 2, 3, 4};
-    vector<int> v(arr, arr + 4);
+    // int arr[4] = {1, 2, 3, 4};
+    // vector<int> v(arr, arr + 4);
+    // for (int i = 0; i < v.size(); i++)
+    // {
+    //     cout << v[i] << endl;
+    // }
+
+    // vector initialization type 6
+    vector<int> v = {5, 8, 4, 9};
     for (int i = 0; i < v.size(); i++)
     {
         cout << v[i] << endl;
