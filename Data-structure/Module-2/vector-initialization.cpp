@@ -18,11 +18,19 @@ int main()
     // }
 
     // vector initialization type 4
-    vector<int> v1(5, 1);
-    vector<int> v2(v1);
-    for (int i = 0; i < v2.size(); i++)
+    // vector<int> v1(5, 1);
+    // vector<int> v2(v1);
+    // for (int i = 0; i < v2.size(); i++)
+    // {
+    //     cout << v2[i] << endl;
+    // }
+
+    // vector initialization type 5
+    int arr[4] = {1, 2, 3, 4};
+    vector<int> v(arr, arr + 4);
+    for (int i = 0; i < v.size(); i++)
     {
-        cout << v2[i] << endl;
+        cout << v[i] << endl;
     }
 
     return 0;
