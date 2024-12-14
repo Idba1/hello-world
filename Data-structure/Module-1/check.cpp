@@ -2,14 +2,13 @@
 using namespace std;
 int main()
 {
-    int n;
+    int n; // O(1) complexity
     cin >> n;
-    for (int i = 1; i <= sqrt(n); i++) //complexity Order of sqrt(N) 
+    int k = 2;
+    for (int i = 1; i < n; i++)
     {
         cout << i << " ";
+        i = i * k; // O(log N)
     }
     return 0;
 }
-
-// 36
-// 10000
