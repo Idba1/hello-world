@@ -13,11 +13,11 @@ public:
     }
 };
 
-void insert_at_head(Node *&head, int idx, int value)
+void insert_at_pos(Node *&head, int idx, int value)
 {
     Node *newNode = new Node(value);
     Node *temp = head;
-    for (int i = 0; i < idx; i++)
+    for (int i = 1; i < idx; i++)
     {
         temp = temp->next;
     }
@@ -46,7 +46,7 @@ int main()
     a->next = b;
     b->next = c;
 
-    insert_at_head(head, 2, 6000);
+    insert_at_pos(head, 2, 6000);
     print_linked_list(head);
 
     return 0;
