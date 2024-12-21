@@ -26,6 +26,17 @@ void print_forward(Node *&head)
     cout << endl;
 }
 
+void print_backward(Node *&tail)
+{
+    Node *temp = tail;
+    while (temp != NULL)
+    {
+        cout << temp->value << " ";
+        temp = temp->prev;
+    }
+    cout << endl;
+}
+
 int main()
 {
     Node *head = new Node(10);
@@ -38,6 +49,7 @@ int main()
     tail->prev = a;
 
     print_forward(head);
+    print_backward(tail);
 
     return 0;
 }
