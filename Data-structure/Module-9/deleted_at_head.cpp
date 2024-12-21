@@ -19,8 +19,15 @@ void deleted_head(Node *&head, Node *&tail)
 {
     Node *deletedNode = head;
     head = head->next;
-    head->prev = NULL;
     delete deletedNode;
+    // side case
+    if (head == NULL)
+    {
+        tail = NULL;
+        cout << "empty list" << endl;
+        return;
+    }
+    head->prev = NULL;
 }
 
 void print_forward(Node *&head)
@@ -56,6 +63,12 @@ int main()
     a->next = tail;
     tail->prev = a;
 
+    print_forward(head);
+
+    deleted_head(head, tail);
+    print_forward(head);
+
+    deleted_head(head, tail);
     print_forward(head);
 
     deleted_head(head, tail);
