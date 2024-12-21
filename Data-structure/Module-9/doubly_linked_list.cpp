@@ -15,6 +15,17 @@ public:
     }
 };
 
+void print_forward(Node *&head)
+{
+    Node *temp = head;
+    while (temp != NULL)
+    {
+        cout << temp->value << " ";
+        temp = temp->next;
+    }
+    cout << endl;
+}
+
 int main()
 {
     Node *head = new Node(10);
@@ -25,6 +36,8 @@ int main()
     a->prev = head;
     a->next = tail;
     tail->prev = a;
+
+    print_forward(head);
 
     return 0;
 }
