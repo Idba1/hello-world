@@ -15,7 +15,7 @@ public:
     }
 };
 
-void insert_at_head(Node *&head, Node *&tail, int value)
+void insert_at_tail(Node *&head, Node *&tail, int value)
 {
     Node *newNode = new Node(value);
     // side case
@@ -25,9 +25,9 @@ void insert_at_head(Node *&head, Node *&tail, int value)
         tail = newNode;
         return;
     }
-    newNode->next = head;
-    head->prev = newNode;
-    head = newNode;
+    tail->next = newNode;
+    newNode->prev = tail;
+    tail = newNode;
 }
 
 void print_forward(Node *&head)
@@ -64,11 +64,9 @@ int main()
     tail->prev = a;
 
     print_forward(head);
-    print_backward(tail);
 
-    insert_at_head(head, tail, 100);
+    insert_at_tail(head, tail, 100);
     print_forward(head);
-    print_backward(tail);
 
     return 0;
 }
