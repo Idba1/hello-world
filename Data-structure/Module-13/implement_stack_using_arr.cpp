@@ -29,5 +29,20 @@ public:
 
 int main()
 {
+    myStack st;
+    st.push(10);
+    st.push(20);
+    st.push(30);
+
+    if (st.empty() == false)
+    {
+        st.pop();
+    }
+
+    if (!st.empty())
+    {
+        cout << st.top() << endl;
+    }
+
     return 0;
 }
