@@ -52,11 +52,11 @@ public:
     {
         return tail->val;
     }
-    int size() //O(1)
+    int size() // O(1)
     {
         return sz;
     }
-    bool empty() //O(1)
+    bool empty() // O(1)
     {
         if (head == NULL)
         {
@@ -72,5 +72,23 @@ public:
 
 int main()
 {
+    myQueue q;
+    int n;
+    cin >> n;
+    for (int i = 0; i < n; i++)
+    {
+        int x;
+        cin >> x;
+        q.push(x);
+    }
+
+    cout << q.front() << " " << q.back() << " " << q.size() << endl;
+
+    while (!q.empty())
+    {
+        cout << q.front() << endl;
+        q.pop();
+    }
+
     return 0;
 }
