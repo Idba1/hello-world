@@ -15,7 +15,7 @@ public:
     }
 };
 
-void inOrder(Node *&root)
+void postOrder(Node *&root)
 {
     // base case
     if (root == NULL)
@@ -23,8 +23,8 @@ void inOrder(Node *&root)
         return;
     }
 
-    inOrder(root->left);
-    inOrder(root->right);
+    postOrder(root->left);
+    postOrder(root->right);
     cout << root->value << " ";
 }
 
@@ -43,7 +43,7 @@ int main()
     b->left = d;
     b->right = e;
 
-    inOrder(root);
+    postOrder(root);
 
     return 0;
 }
