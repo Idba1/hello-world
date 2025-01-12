@@ -15,7 +15,7 @@ public:
     }
 };
 
-void level_order(Node *root)
+Node *input_tree()
 {
     int value;
     cin >> value;
@@ -62,9 +62,36 @@ void level_order(Node *root)
             q.push(p->right);
         }
     }
+    return root;
+}
+
+void level_order_traversal(Node *root)
+{
+    queue<Node *> q;
+    q.push(root);
+    while (!q.empty())
+    {
+        // step1: ber kore ana
+        Node *f = q.front();
+        q.pop();
+        // step2: oi Node ke niye kaj kora
+        cout << f->value << " ";
+
+        // step3: children goloke push kora
+        if (f->left != NULL)
+        {
+            q.push(f->left);
+        }
+        if (f->right != NULL)
+        {
+            q.push(f->right);
+        }
+    }
 }
 
 int main()
 {
+    Node *root = input_tree();
+    level_order_traversal(root);
     return 0;
 }
