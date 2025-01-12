@@ -19,9 +19,21 @@ Node *input_tree()
 {
     int value;
     cin >> value;
-    Node *root = new Node(value);
+    Node *root;
+    if (value == -1)
+    {
+        root = NULL;
+    }
+    else
+    {
+        root = new Node(value);
+    }
+
     queue<Node *> q;
-    q.push(root);
+    if (root != NULL)
+    {
+        q.push(root);
+    }
     while (!q.empty())
     {
         // step1: ber kore ana
@@ -67,6 +79,11 @@ Node *input_tree()
 
 void level_order_traversal(Node *root)
 {
+    if (root == NULL)
+    {
+        cout << "No tree" << endl;
+        return;
+    }
     queue<Node *> q;
     q.push(root);
     while (!q.empty())
