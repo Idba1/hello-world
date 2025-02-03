@@ -5,11 +5,11 @@ bool vis[1005];
 
 void bfs(int src)
 {
-    queue<int> q;
+    queue<int> q; //space complexity --> O(V) OR O(N)
     q.push(src);
     vis[src] = true;
 
-    while (!q.empty()) // O(N)
+    while (!q.empty()) // time complexity --> O(N) OR O(V)
     {
         // ber kore ana
         int par = q.front();
@@ -19,13 +19,13 @@ void bfs(int src)
         cout << par << " ";
 
         // children golo push kora
-        for (int child : adj_list[par]) // O(E)
+        for (int child : adj_list[par]) // time complexity --> O(E)
         {
             // cout << child << " ";
             if (vis[child] == false)
             {
                 q.push(child);
-                vis[child] = true; // full O(N+E)
+                vis[child] = true; // time complexity --> full O(N+E) OR O(V+E)
             }
         }
     }
