@@ -9,7 +9,7 @@ void bfs(int src)
     q.push(src);
     vis[src] = true;
 
-    while (!q.empty())
+    while (!q.empty()) // O(N)
     {
         // ber kore ana
         int par = q.front();
@@ -19,13 +19,13 @@ void bfs(int src)
         cout << par << " ";
 
         // children golo push kora
-        for (int child : adj_list[par])
+        for (int child : adj_list[par]) // O(E)
         {
             // cout << child << " ";
             if (vis[child] == false)
             {
                 q.push(child);
-                vis[child] = true;
+                vis[child] = true; // full O(N+E)
             }
         }
     }
