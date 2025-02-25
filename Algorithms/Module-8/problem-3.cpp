@@ -1,12 +1,13 @@
 #include <bits/stdc++.h>
 using namespace std;
-bool vis[305][305];
-int distGrid[305][305];
+bool vis[1005][1005];
+int distGrid[1005][1005];
 int dx[8] = {2,2,-2,-2,1,1,-1,-1};
 int dy[8] = {1,-1,1,-1,2,-2,2,-2};
 int main(){
     int t;
     cin>>t;
+
     while(t--){
         int r,c;
         cin>>r>>c;
@@ -18,10 +19,12 @@ int main(){
                 distGrid[i][j]=-1;
             }
         }
+
         queue<pair<int,int>>q;
         vis[sr][sc]=true;
         distGrid[sr][sc]=0;
         q.push({sr,sc});
+        
         while(!q.empty()){
             auto [rr,cc] = q.front();
             q.pop();
