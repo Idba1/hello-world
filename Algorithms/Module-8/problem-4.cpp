@@ -3,18 +3,20 @@ using namespace std;
 char grid[1005][1005], originalGrid[1005][1005];
 bool visited[1005][1005];
 pair<int,int> parentPos[1005][1005];
+int n, m;
+int dx[] = {0, 0, -1, 1};
+int dy[] = {1, -1, 0, 0};
 
 int main()
 {
-    int n, m;
-    cin >> n >> m;
+    scanf("%d %d", &n, &m);
 
     int startX = -1, startY = -1;
     int destX  = -1, destY  = -1;
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-            cin >> grid[i][j];
+            scanf(" %c", &grid[i][j]);
             originalGrid[i][j] = grid[i][j];
             if(grid[i][j] == 'R'){
                 startX = i;
@@ -30,9 +32,9 @@ int main()
     if(startX == -1 || startY == -1 || destX == -1 || destY == -1){
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
-                cout << originalGrid[i][j];
+                printf("%c", originalGrid[i][j]);
             }
-            cout << "\n";
+            printf("\n");
         }
         return 0;
     }
@@ -43,9 +45,6 @@ int main()
             parentPos[i][j] = {-1, -1};
         }
     }
-
-    int dx[4] = {0, 0, -1, 1};
-    int dy[4] = {1, -1, 0, 0};
 
     queue<pair<int,int>> q;
     visited[startX][startY] = true;
@@ -78,9 +77,9 @@ int main()
     if(!found){
         for(int i = 0; i < n; i++){
             for(int j = 0; j < m; j++){
-                cout << originalGrid[i][j];
+                printf("%c", originalGrid[i][j]);
             }
-            cout << "\n";
+            printf("\n");
         }
         return 0;
     }
@@ -97,9 +96,9 @@ int main()
 
     for(int i = 0; i < n; i++){
         for(int j = 0; j < m; j++){
-            cout << grid[i][j];
+            printf("%c", grid[i][j]);
         }
-        cout << "\n";
+        printf("\n");
     }
     return 0;
 }
