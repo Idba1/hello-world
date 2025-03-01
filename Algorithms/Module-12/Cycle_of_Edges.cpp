@@ -1,60 +1,50 @@
 #include <bits/stdc++.h>
 using namespace std;
-int parent[100005], rank_set[100005];
-
-int find(int node)
-{
-    if (parent[node] == -1)
-        return node;
-    return parent[node] = find(parent[node]);
-}
-
-void union_set(int u, int v)
-{
-    int leaderU = find(u);
-    int leaderV = find(v);
-    if (leaderU != leaderV)
-    {
-        if (rank_set[leaderU] > rank_set[leaderV])
-        {
-            parent[leaderV] = leaderU;
-        }
-        else if (rank_set[leaderU] < rank_set[leaderV])
-        {
-            parent[leaderU] = leaderV;
-        }
-        else
-        {
-            parent[leaderV] = leaderU;
-            rank_set[leaderU]++;
-        }
-    }
-}
 
 int main()
 {
-    int n, e;
-    cin >> n >> e;
+    int t;
+    cin >> t;
 
-    memset(parent, -1, sizeof(parent));
-    memset(rank_set, 0, sizeof(rank_set));
-
-    int cycleEdges = 0;
-
-    for (int i = 0; i < e; i++)
+    while (t--)
     {
-        int a, b;
-        cin >> a >> b;
-        if (find(a) == find(b))
+        int n;
+        cin >> n;
+        vector<long long> h(n);
+        for (int i = 0; i < n; i++)
         {
-            cycleEdges++;
+            cin >> h[i];
         }
-        else
+        vector<long long> prefix(n + 1, 0);
+        for (int i = 0; i < n; i++)
         {
-            union_set(a, b);
+            prefix[i + 1] = prefix[i] + h[i];
         }
-    }
 
-    cout << cycleEdges << endl;
+        long long maxWater = 0;
+        int bestI = 0, bestJ = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                int width = j - i - 1;
+                long long height = min(h[i], h[j]);
+                long long sumBetween = prefix[j] - prefix[i + 1];
+                long long water = height * width - sumBetween;
+
+                if (water < 0)
+                    water = 0;
+
+                if (water > mgit axWater)
+                {
+                    maxWater = water;
+                    bestI = i;
+                    bestJ = j;
+                }
+            }
+        }
+        cout << bestI << " " << bestJ << "\n";
+    }
     return 0;
 }
