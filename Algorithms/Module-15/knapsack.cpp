@@ -2,7 +2,7 @@
 using namespace std;
 int val[1005], weight[1005];
 
-int knapsack(int i, int mx_weight)
+int knapsack(int i, int mx_weight) //time complexity --> O(2^N)
 {
     if (i < 0 || mx_weight <= 0)
     {
