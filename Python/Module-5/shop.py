@@ -15,3 +15,4 @@ nisho = Shop('noisho')
 nisho.add_to_cart('cap')
 nisho.add_to_cart('watch')
 print(nisho.cart)
+
