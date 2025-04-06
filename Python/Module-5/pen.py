@@ -1,5 +1,5 @@
 class Pen:
-    menufecture = 'matador'
+    manufacture = 'matador'
     
     def __init__(self, owner, brand, price):
         self.owner= owner

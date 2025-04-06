@@ -1,5 +1,5 @@
 class Phone:
-    manifecture = 'China'
+    manufacture = 'China'
     
     def __init__(self ,owner, brand, price):
         self.owner = owner
