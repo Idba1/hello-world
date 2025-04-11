@@ -1,8 +1,8 @@
 class Shop:
-    products = []
 
     def __init__(self, name):
         self.name = name
+        self.products = []
 
     def add_product(self, name, price):
         product = Product(name, price)
@@ -22,10 +22,10 @@ class Product:
     def __init__(self, name, price):
         self.name = name
         self.price = price
-        
+
     # def __str__(self):
     #     return self.name
-    
+
     def __repr__(self):
         return self.name
 
@@ -39,6 +39,8 @@ print(shop1.products)
 
 shop2 = Shop('test shop 2')
 shop2.add_product('Laptop', 10000000)
+shop2.add_product('monitor', 10000000)
 
 print(shop1.name)
 print(shop2.name)
+print(shop2.products)
