@@ -9,6 +9,26 @@ class User(ABC):
         self.address = address
 
 
+class Customer(User):
+    def __init__(self, name, phone, email, address):
+        super().__init__(name, phone, email, address)
+        self.cart = None
+
+    def view_menu(self, restaurent):
+        restaurent.menu.show_menu()
+
+    def add_to_cart(self, restaurent, item_name):
+        item = restaurent.menu.find_item(item_name)
+        if item is not None:
+            pass
+        else:
+            print('Item not found')
+
+    def view_cart(self):
+        print('*****View Cart*****')
+        print('Name\tPrice\tQuantity')
+
+
 class Employee(User):
     def __init__(self, name, phone, email, address, designation, salary, age):
         super().__init__(name, phone, email, address)
