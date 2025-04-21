@@ -51,7 +51,7 @@ def admin_menu():
     while True:
         print(f'welcome {admin.name}!!')
         print('1. Add new Item')
-        print('2. Anew Employee')
+        print('2. Add new Employee')
         print('3. view Employee')
         print('4. View Items')
         print('5. Deleted Item')
@@ -60,8 +60,8 @@ def admin_menu():
         choice = int(input('Enter your Choice : '))
         if choice == 1:
             item_name = input('Enter Item Name : ')
-            item_price = input('Enter item price : ')
-            item_quantity = input('Enter Item Quantity : ')
+            item_price = float(input('Enter item price : '))
+            item_quantity = int(input('Enter Item Quantity : '))
             item = FoodItem(item_name, item_price, item_quantity)
             admin.add_new_item(mamar_restaurent, item)
 
@@ -73,8 +73,9 @@ def admin_menu():
             age = input('Enter Employee age : ')
             salary = input('Enter Employee salary : ')
             address = input('Enter Employee address : ')
-            admin.addEmployee(name, phone, email, address,
-                              designation, salary, age)
+            employee = Employee(name, phone, email, address,
+                                designation, salary, age)
+            admin.addEmployee(mamar_restaurent, employee)
 
         elif choice == 3:
             admin.view_employee(mamar_restaurent)
@@ -92,3 +93,21 @@ def admin_menu():
 
         else:
             print('invalid input')
+
+
+while True:
+    print('Welcome!!')
+    print('1. Customer')
+    print('2. Admin')
+    print('3. Exit')
+
+    choice = input('Enter your Choice : ')
+    if choice == '1':
+        Customer_menu()
+    elif choice == '2':
+        admin_menu()
+    elif choice == '3':
+        print('Exiting system. Goodbye!')
+        break
+    else:
+        print('Invalid choice. Please try again.')

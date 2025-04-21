@@ -1,3 +1,4 @@
+from menu import Menu
 
 
 class Restaurent:
