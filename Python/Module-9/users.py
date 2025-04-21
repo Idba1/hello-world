@@ -1,4 +1,5 @@
 from abc import ABC
+from orders import Order
 
 
 class User(ABC):
@@ -36,6 +37,10 @@ class Customer(User):
             print(f'{item.name}\t{item.price}\t{quantity}')
         print(f'Total Price: {self.cart.total_price}')
 
+    def pay_bill(self):
+        print(f'Total {self.cart.total_price} paid successfully')
+        self.cart.clear()
+
 
 class Employee(User):
     def __init__(self, name, phone, email, address, designation, salary, age):
@@ -68,22 +73,22 @@ class Admin(User):
         restaurent.menu.remove_item(item)
 
 
-ad = Admin('Admin', 1234, 'admin@gmail.com', '22 Dhaka')
-# print(ad.name)
+# ad = Admin('Admin', 1234, 'admin@gmail.com', '22 Dhaka')
+# # print(ad.name)
 
-mamar_res = Restaurent('Mamar Restaurent')
-mn = Menu()
-item = FoodItem('Pizza', 12.45, 10)
-item2 = FoodItem('burger', 10, 30)
-ad.add_new_item(mamar_res, item)
-ad.add_new_item(mamar_res, item2)
+# mamar_res = Restaurent('Mamar Restaurent')
+# mn = Menu()
+# item = FoodItem('Pizza', 12.45, 10)
+# item2 = FoodItem('burger', 10, 30)
+# ad.add_new_item(mamar_res, item)
+# ad.add_new_item(mamar_res, item2)
 
 
-customer1 = Customer('Karim', 'k@gmail.com', 9564, 'dhaka')
-customer1.view_menu(mamar_res)
+# customer1 = Customer('Karim', 'k@gmail.com', 9564, 'dhaka')
+# customer1.view_menu(mamar_res)
 
-item_name = input('Enter item Name : ')
-item_quantity = int(input('Enter Item quantity : '))
+# item_name = input('Enter item Name : ')
+# item_quantity = int(input('Enter Item quantity : '))
 
-customer1.add_to_cart(mamar_res, item_name, item_quantity)
-customer1.view_cart()
+# customer1.add_to_cart(mamar_res, item_name, item_quantity)
+# customer1.view_cart()
