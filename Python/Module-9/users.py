@@ -71,6 +71,9 @@ class Admin(User):
 
     def remove_item(self, restaurent, item):
         restaurent.menu.remove_item(item)
+        
+    def view_Menu(self, restaurent):
+        restaurent.menu.show_menu()
 
 
 # ad = Admin('Admin', 1234, 'admin@gmail.com', '22 Dhaka')

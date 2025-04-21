@@ -39,3 +39,56 @@ def Customer_menu():
             break
         else:
             print('invalid input')
+
+
+def admin_menu():
+    name = input('Enter your Name : ')
+    email = input('Enter your email : ')
+    phone = input('Enter your Phone : ')
+    address = input('Enter your Address : ')
+    admin = Admin(name=name, email=email, phone=phone, address=address)
+
+    while True:
+        print(f'welcome {admin.name}!!')
+        print('1. Add new Item')
+        print('2. Anew Employee')
+        print('3. view Employee')
+        print('4. View Items')
+        print('5. Deleted Item')
+        print('6. Exit')
+
+        choice = int(input('Enter your Choice : '))
+        if choice == 1:
+            item_name = input('Enter Item Name : ')
+            item_price = input('Enter item price : ')
+            item_quantity = input('Enter Item Quantity : ')
+            item = FoodItem(item_name, item_price, item_quantity)
+            admin.add_new_item(mamar_restaurent, item)
+
+        elif choice == 2:
+            name = input('Enter Employee Name : ')
+            phone = input('Enter Employee phone: ')
+            email = input('Enter Employee email : ')
+            designation = input('Enter Employee designation : ')
+            age = input('Enter Employee age : ')
+            salary = input('Enter Employee salary : ')
+            address = input('Enter Employee address : ')
+            admin.addEmployee(name, phone, email, address,
+                              designation, salary, age)
+
+        elif choice == 3:
+            admin.view_employee(mamar_restaurent)
+
+        elif choice == 4:
+            admin.view_Menu()
+
+        elif choice == 5:
+            item_name = input('Enter Item Name : ')
+            admin.remove_item(mamar_restaurent)
+
+        elif choice == 6:
+            print('Thank you for using our system')
+            break
+
+        else:
+            print('invalid input')
