@@ -139,3 +139,28 @@ WHERE Roll = '0001' ;
 
 SELECT CseMarks + MeMarks, CseMarks - MeMarks, (CseMarks + MeMarks) / 2, CseMarks % 10
 FROM Marks ;
+
+
+-- Comparison Operators
+
+SELECT * FROM Student
+WHERE Age>18;
+
+SELECT * FROM Student
+WHERE Age<18;
+
+SELECT * FROM Student
+WHERE Age=12;
+
+SELECT * FROM Student
+WHERE Age!=18;
+
+SELECT * FROM Student
+WHERE Age<>12;
+
+SELECT * FROM Student
+WHERE Age>=18;
+
+SELECT * FROM Student
+WHERE Age<=18;
+
