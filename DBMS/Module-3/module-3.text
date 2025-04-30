@@ -80,3 +80,22 @@ SELECT * FROM Student;
 SELECT Name FROM Student;
 
 
+
+
+
+-- WHERE QUERY
+-- show roll=0001's data
+
+SELECT * FROM Student
+WHERE Roll='0001';
+
+-- show Tasfia Jahan's data
+
+SELECT * FROM Student
+WHERE Name = 'Tasfia Jahan'; 
+
+-- show 0002's Age
+
+SELECT Age FROM Student
+WHERE Roll='0002' ;
+
