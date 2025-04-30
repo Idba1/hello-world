@@ -164,3 +164,36 @@ WHERE Age>=18;
 SELECT * FROM Student
 WHERE Age<=18;
 
+
+
+-- Logical AND, OR Operator
+
+CREATE TABLE Employee (
+    ID CHAR(4) PRIMARY KEY,
+    Name VARCHAR(50),
+    Salary INT,
+    Joining DATETIME,
+    Age INT
+);
+
+INSERT INTO Employee (ID, Name, Salary, Joining, Age) VALUES
+('E001', 'Rahim Uddin', 35000, '2023-06-15 09:00:00', 28),
+('E002', 'Karim Ali', 40000, '2022-03-21 10:30:00', 32),
+('E003', 'Shanta Roy', 30000, '2021-11-05 08:45:00', 26),
+('E004', 'Bappa Das', 45000, '2020-08-12 11:15:00', 35),
+('E005', 'Mita Khatun', 38000, '2023-01-18 09:30:00', 30);
+
+SELECT * FROM Employee;
+
+-- show data age less then 30 and salary grater then 12000
+SELECT * FROM employee
+WHERE Age < 30 AND Salary > 12000;
+
+
+SELECT Name, Salary FROM employee
+WHERE Age < 30 AND Salary > 12000;
+
+SELECT * FROM Employee
+WHERE Salary > 42000 OR Age > 35;
+
+
