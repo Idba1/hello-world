@@ -99,3 +99,43 @@ WHERE Name = 'Tasfia Jahan';
 SELECT Age FROM Student
 WHERE Roll='0002' ;
 
+
+-- Arithmatic Operation
+
+CREATE TABLE Marks(
+	Roll CHAR(4) PRIMARY KEY,
+    CseMarks INT,
+    MeMarks INT
+);
+
+INSERT INTO Marks (Roll, CseMarks, MeMarks)
+VALUES
+('0001', 85, 78),
+('0002', 90, 82),
+('0003', 75, 88),
+('0004', 92, 79),
+('0005', 80, 85);
+
+SELECT CseMarks + MeMarks
+FROM Marks 
+WHERE Roll = '0001' ;
+
+SELECT CseMarks - MeMarks
+FROM Marks 
+WHERE Roll = '0001' ;
+
+SELECT CseMarks / MeMarks
+FROM Marks 
+WHERE Roll = '0002' ;
+
+SELECT CseMarks % MeMarks
+FROM Marks 
+WHERE Roll = '0004' ;
+
+
+SELECT CseMarks + MeMarks, CseMarks - MeMarks, (CseMarks + MeMarks) / 2, CseMarks % 10
+FROM Marks 
+WHERE Roll = '0001' ;
+
+SELECT CseMarks + MeMarks, CseMarks - MeMarks, (CseMarks + MeMarks) / 2, CseMarks % 10
+FROM Marks ;
