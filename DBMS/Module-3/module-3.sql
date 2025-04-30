@@ -197,3 +197,42 @@ SELECT * FROM Employee
 WHERE Salary > 42000 OR Age > 35;
 
 
+-- DISTINCT, ORDER BY, LIMIT,
+
+CREATE TABLE CorporateEmployee(
+	id CHAR(4) PRIMARY KEY,
+    Name VARCHAR (50),
+    Designation VARCHAR(50),
+    Age INT,
+    Salary VARCHAR(50)
+);
+
+
+INSERT INTO CorporateEmployee (id, Name, Designation, Age, Salary) VALUES
+('E001', 'Arif Rahman', 'Software Engineer', 28, '75000'),
+('E002', 'Sabina Akter', 'Project Manager', 35, '95000'),
+('E003', 'Rubel Hasan', 'Data Analyst', 30, '68000'),
+('E004', 'Md. Tanvir', 'HR Manager', 40, '72000'),
+('E005', 'Sanjida Islam', 'Software Engineer', 27, '64000');
+
+
+SELECT DISTINCT Designation FROM CorporateEmployee ;
+
+SELECT Name, Age FROM CorporateEmployee 
+ORDER BY Age ASC ;
+
+SELECT Name, Age FROM CorporateEmployee 
+ORDER BY Age DESC ;
+
+SELECT Name, Age FROM CorporateEmployee
+ORDER BY Age ASC
+LIMIT 4 OFFSET 1;
+
+SELECT Name, Age FROM CorporateEmployee
+ORDER BY Age DESC
+LIMIT 2;
+
+
+SELECT Name, Age FROM CorporateEmployee
+ORDER BY Age ASC
+LIMIT 2 , 2;
