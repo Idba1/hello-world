@@ -236,3 +236,31 @@ LIMIT 2;
 SELECT Name, Age FROM CorporateEmployee
 ORDER BY Age ASC
 LIMIT 2 , 2;
+
+
+-- IN, NOT IN, LIKE, AS
+
+SELECT Name, Age FROM CorporateEmployee
+WHERE Age IN (27, 28, 30)
+ORDER BY Age ASC;
+
+SELECT * FROM CorporateEmployee
+WHERE id NOT IN ('E001', 'E003', 'E005');
+
+SELECT * FROM CorporateEmployee
+WHERE Name LIKE 'S%';
+
+SELECT * FROM CorporateEmployee
+WHERE Designation LIKE '%Manager%';
+
+SELECT * FROM CorporateEmployee
+WHERE Name LIKE '%an';
+
+SELECT * FROM CorporateEmployee
+WHERE Name LIKE 'Md.%';
+
+SELECT Name AS Employee_Name, Age AS Employee_Age
+FROM CorporateEmployee;
+
+SELECT C.Name AS Employee_Name, C.Designation
+FROM CorporateEmployee AS C;
