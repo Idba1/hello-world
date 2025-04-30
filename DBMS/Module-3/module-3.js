@@ -66,3 +66,17 @@ University VARCHAR(50),
 Credit INT,
 PRIMARY KEY (CourseName , University)
 );
+
+
+-- See all data from student table
+-- SELECT QUERY
+-- way -1
+SELECT Roll, Name, Email, Address, Age FROM Student;
+
+-- way-2
+SELECT * FROM Student;
+
+-- see only names
+SELECT Name FROM Student;
+
+
