@@ -19,9 +19,8 @@ const displayProduct = (products) => {
         <h3>price: ${product.price}</h3>
         <p>${product.description.slice(0, 50)}</p>
         <button onclick="singleProduct('${product.id}')">Details</button>
-        <button onclick="handleAddToCart('${product.title.slice(0, 12)}',${
-      product?.price
-    })">Add toTO CArt</button>
+        <button onclick="handleAddToCart('${product.title.slice(0, 12)}',${product?.price
+      })">Add toTO CArt</button>
         `;
 
     productContaine.appendChild(div);
@@ -60,7 +59,7 @@ const UpdateTotal = () => {
 };
 
 const singleProduct = (id) => {
-    console.log(id);
+  console.log(id);
   fetch(`https://fakestoreapi.com/products/${id}`)
     .then((res) => res.json())
     .then((json) => console.log(json));
